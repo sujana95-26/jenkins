@@ -1,17 +1,17 @@
-pipeline{
+pipeline {
   agent any
   stages {
-    stage ('build stage'){
+    stage('build stage'){
       steps {
         sh "ls"
       }
     }
-    stage ('test stage'){
+    stage('test stage'){
       steps {
         sh "pwd"
       }
     }
-    stage ('deploy stage'){
+    stage('deploy stage'){
       steps {
         sh "echo 'Hello world'"
       }
