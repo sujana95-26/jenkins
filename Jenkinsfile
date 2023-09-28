@@ -3,7 +3,7 @@ pipeline {
   stages {
     stafe('Clean up'){
       steps {
-        sh "docker rm -f $(docker ps -aq) || true"
+        sh "docker rm -f \$(docker ps -aq) || true"
       }
     }
     stage('build stage'){
