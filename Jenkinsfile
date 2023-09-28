@@ -13,7 +13,7 @@ pipeline {
     }
     stage('test stage'){
       steps {
-        sh "docker run -d -p 80:5500 --name app myapp" "
+        sh "docker run -d -p 80:5500 --name app myapp" 
       }
     }
   }
