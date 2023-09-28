@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stafe('Clean up'){
+    stage('Clean up'){
       steps {
         sh "docker rm -f \$(docker ps -aq) || true"
       }
