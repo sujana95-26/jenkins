@@ -1,19 +1,19 @@
 pipeline {
   agent any
   stages {
+    stafe('Clean up'){
+      steps {
+        sh "docker rm -f $(docker ps -aq) || true"
+      }
+    }
     stage('build stage'){
       steps {
-        sh "ls"
+        sh "docker build -t myapp"
       }
     }
     stage('test stage'){
       steps {
-        sh "pwd"
-      }
-    }
-    stage('deploy stage'){
-      steps {
-        sh "echo 'Hello world'"
+        sh "docker run -d -p 80:5500 --name app myapp" "
       }
     }
   }
